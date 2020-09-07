@@ -1,4 +1,4 @@
-package com.benmohammad.reelzapp.ui
+package com.benmohammad.reelzapp.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
