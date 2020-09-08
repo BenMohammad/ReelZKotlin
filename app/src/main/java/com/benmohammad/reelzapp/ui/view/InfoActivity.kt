@@ -1,8 +1,6 @@
 package com.benmohammad.reelzapp.ui.view
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -10,14 +8,12 @@ import com.benmohammad.reelzapp.R
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 
+class InfoActivity: AppCompatActivity() {
 
-class SnippetsActivity : AppCompatActivity() {
-
-    lateinit  var adView: AdView
+    lateinit var adView: AdView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_snippets)
-
+        setContentView(R.layout.activity_info)
         adView = findViewById<View>(R.id.advertBanner) as AdView
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
@@ -31,17 +27,7 @@ class SnippetsActivity : AppCompatActivity() {
                 finish()
                 true
             }
-            R.id.info -> {
-                val intent = Intent(this, InfoActivity::class.java)
-                startActivity(intent)
-                return true
-            }
             else -> false
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.snippets_menu, menu)
-        return super.onCreateOptionsMenu(menu)
     }
 }
