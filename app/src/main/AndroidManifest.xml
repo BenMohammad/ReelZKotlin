@@ -11,15 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.view.MainActivity">
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.view.InfoActivity" android:parentActivityName=".ui.view.SnippetsActivity"/>
-        <activity android:name=".ui.view.SnippetsActivity"/>
+        <activity android:name=".activities.InfoActivity" android:parentActivityName=".activities.SnippetsActivity"/>
+        <activity android:name=".activities.SnippetsActivity"/>
+        <activity android:name=".activities.MainActivity"/>
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true"/>

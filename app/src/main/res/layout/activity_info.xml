@@ -6,6 +6,17 @@
     android:background="#000"
     android:orientation="vertical">
 
+    <TextView
+        android:fontFamily="@font/codedfont"
+        android:textColor="@color/colorGrey"
+        android:text="ReelZ"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
 
     <com.google.android.gms.ads.AdView

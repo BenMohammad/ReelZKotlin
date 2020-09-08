@@ -76,9 +76,9 @@
                         android:layout_gravity="end|bottom"
                         android:adjustViewBounds="true"
                         android:background="@drawable/main_border"
-                        android:clickable="true"
-                        android:src="@drawable/whatsapp"
+                        android:src="@drawable/whatsapp_disabled"
                         android:padding="@dimen/imageviewBtnPad"
+                        android:clickable="true"
                         android:layout_margin="@dimen/imageviewMargin"
                         />
 
@@ -89,8 +89,8 @@
                         android:layout_gravity="bottom"
                         android:layout_margin="@dimen/imageviewMargin"
                         android:background="@drawable/main_border"
+                        android:src="@drawable/chrome_disabled"
                         android:clickable="true"
-                        android:src="@drawable/chrome"
                         android:padding="@dimen/imageviewBtnPad"
                         />
                 </LinearLayout>
