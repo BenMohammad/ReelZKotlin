@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -38,14 +39,13 @@ class MainActivity: AppCompatActivity() {
                 return true
             }
             R.id.delete -> {
+                codebox.text?.clear()
 
 
                 return true
             }
             R.id.snippets -> {
-                startActivity(Intent(MainActivity@this, SnippetsActivity::class.java))
-                finish()
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+               openSnippets()
                 return true
             }
             else -> return false
@@ -53,13 +53,21 @@ class MainActivity: AppCompatActivity() {
         }
     }
 
+    private fun openSnippets() {
+        val intent = Intent(MainActivity@this, SnippetsActivity::class.java)
+        startActivityForResult(intent, REQUEST_CODE)
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+    }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == REQUEST_CODE && data != null) {
-            if(resultCode == Activity.RESULT_OK) {
+        Log.d("data is null:" , data.toString())
+        if(resultCode == Activity.RESULT_OK && data != null) {
+            if(requestCode == 1) {
                 val snippet = data.getStringExtra("snippet")
+
+
                 codebox.addTextChangedListener(CustomTextWatcher(codebox))
                 val editable: Editable? = codebox.text
                 val start: Int = codebox!!.selectionStart

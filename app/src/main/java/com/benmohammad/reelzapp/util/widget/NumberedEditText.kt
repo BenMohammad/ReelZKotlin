@@ -31,7 +31,7 @@ class NumberedEditText(context: Context, attrs: AttributeSet
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         var baseLine = baseline
-        for (i in 0 until 5) {
+        for (i in 0 until lineCount) {
 
                 canvas.drawText(
                     String.format(" %d  ", ( i + 1)),

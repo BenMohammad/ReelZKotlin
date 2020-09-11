@@ -27,7 +27,7 @@
             android:background="@color/colorPrimaryDark"
             android:fontFamily="monospace"
             android:gravity="top|left"
-            android:maxLines="5"
+            android:maxLines="500"
             android:hint="Type Java code here...."
             android:inputType="textMultiLine|textNoSuggestions"
             android:paddingLeft="24dp"

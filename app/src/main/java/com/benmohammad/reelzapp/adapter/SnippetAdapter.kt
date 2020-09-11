@@ -20,10 +20,9 @@ class SnippetAdapter(private val snippets: List<Snippet>, val context: Context, 
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.snippet_item, null)
         }
-        val content = view!!.findViewById<TextView>(R.id.title)
-        content.text = snippets.get(p0).title
-        content.setOnClickListener { comm.sendCodeToEditor(snippets.get(p0).content) }
-
+        val content = view!!.findViewById<TextView>(R.id.titleTV)
+        content.text = snippets[p0].title
+        content.setOnClickListener { comm.sendCodeToEditor(snippets[p0].content) }
         return view
     }
 

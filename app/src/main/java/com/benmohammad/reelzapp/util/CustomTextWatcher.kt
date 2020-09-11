@@ -7,7 +7,6 @@ import android.text.Spanned
 import android.text.TextWatcher
 import android.text.style.CharacterStyle
 import android.text.style.ForegroundColorSpan
-import android.widget.Toast
 import com.benmohammad.reelzapp.data.model.ColorScheme
 import com.benmohammad.reelzapp.util.widget.NumberedEditText
 import java.util.regex.Matcher
@@ -30,7 +29,7 @@ class CustomTextWatcher constructor(val e: NumberedEditText): TextWatcher {
 
 
     override fun afterTextChanged(editable: Editable) {
-        if (null != e.layout && e.lineCount > 5) {
+        if (null != e.layout && e.lineCount > 500) {
             e.text?.delete(e.text!!.length - 1, e.text!!.length);
         }
         removeSpans(editable, ForegroundColorSpan::class.java)
