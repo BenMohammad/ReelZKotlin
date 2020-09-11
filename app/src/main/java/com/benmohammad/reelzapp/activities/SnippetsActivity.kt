@@ -34,13 +34,12 @@ class SnippetsActivity: AppCompatActivity(), Comm {
         return when(item.itemId) {
             R.id.info -> {
                 startActivity(Intent(SnippetsActivity@this, InfoActivity::class.java))
+                finish()
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 true
             }
             android.R.id.home -> {
                 onBackPressed()
-                finish()
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
                 true
             }
             else -> false
@@ -52,6 +51,18 @@ class SnippetsActivity: AppCompatActivity(), Comm {
         intent.putExtra("snippet", code)
         setResult(Activity.RESULT_OK, intent)
         finish()
-        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(SnippetsActivity@this, MainActivity::class.java))
+        finish()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 }

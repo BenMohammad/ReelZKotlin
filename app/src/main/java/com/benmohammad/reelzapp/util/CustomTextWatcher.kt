@@ -1,16 +1,18 @@
 package com.benmohammad.reelzapp.util
 
+import android.R.attr.maxLines
 import android.graphics.Color
 import android.text.Editable
 import android.text.Spanned
 import android.text.TextWatcher
 import android.text.style.CharacterStyle
 import android.text.style.ForegroundColorSpan
+import android.widget.Toast
 import com.benmohammad.reelzapp.data.model.ColorScheme
-
 import com.benmohammad.reelzapp.util.widget.NumberedEditText
 import java.util.regex.Matcher
 import java.util.regex.Pattern
+
 
 class CustomTextWatcher constructor(val e: NumberedEditText): TextWatcher {
 
@@ -28,7 +30,10 @@ class CustomTextWatcher constructor(val e: NumberedEditText): TextWatcher {
 
 
     override fun afterTextChanged(editable: Editable) {
-            removeSpans(editable, ForegroundColorSpan::class.java)
+        if (null != e.layout && e.lineCount > 5) {
+            e.text?.delete(e.text!!.length - 1, e.text!!.length);
+        }
+        removeSpans(editable, ForegroundColorSpan::class.java)
             for (scheme in schemes) {
                 val m: Matcher = scheme.pattern.matcher(editable)
                 while (m.find()) {
@@ -40,7 +45,6 @@ class CustomTextWatcher constructor(val e: NumberedEditText): TextWatcher {
                     )
                 }
             }
-
         }
 
 

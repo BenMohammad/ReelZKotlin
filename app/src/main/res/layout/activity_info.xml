@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/logo"
         android:fontFamily="@font/codedfont"
         android:textColor="@color/colorGrey"
         android:text="ReelZ"
@@ -17,7 +18,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/logo"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    <TextView
+        android:fontFamily="@font/codedfont"
+        android:layout_marginTop="28dp"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:id="@+id/textInfo"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorGrey"
+        android:layout_height="200dp"/>
+
+    <Button
+        android:id="@+id/inviteBtn"
+        android:textColor="@color/white"
+        android:background="@drawable/main_border"
+        android:layout_margin="10dp"
+        android:layout_below="@id/textInfo"
+        android:text="INVITE A FRIEND"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/advertBanner"

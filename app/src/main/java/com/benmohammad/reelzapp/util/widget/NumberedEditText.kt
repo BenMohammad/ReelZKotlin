@@ -5,8 +5,10 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
+import android.text.TextWatcher
 import android.text.method.ScrollingMovementMethod
 import android.util.AttributeSet
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatEditText
 
 class NumberedEditText(context: Context, attrs: AttributeSet
@@ -17,28 +19,30 @@ class NumberedEditText(context: Context, attrs: AttributeSet
     var numberedEditText: NumberedEditText? = null
 
     init {
-        numberedEditText = this
         rect = Rect()
         paint = Paint()
         paint!!.style = Paint.Style.FILL
         paint!!.color = resources.getColor(R.color.white)
         paint!!.textSize = 24f
-        setHorizontallyScrolling(false)
+        setHorizontallyScrolling(true)
         movementMethod = ScrollingMovementMethod()
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         var baseLine = baseline
-        for (i in 0 until lineCount) {
-            canvas.drawText(
-                String.format(" %d   ", i + 1),
-                rect!!.left.toFloat(),
-                baseLine.toFloat(),
-                paint!!
-            )
-            baseLine += lineHeight
-        }
-    }
+        for (i in 0 until 5) {
+
+                canvas.drawText(
+                    String.format(" %d  ", ( i + 1)),
+                    rect!!.left.toFloat(),
+                    baseLine.toFloat(),
+                    paint!!
+                )
+
+                baseLine += lineHeight
+
+
+    } }
 
 }

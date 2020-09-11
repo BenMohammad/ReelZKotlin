@@ -22,7 +22,7 @@ class SnippetAdapter(private val snippets: List<Snippet>, val context: Context, 
         }
         val content = view!!.findViewById<TextView>(R.id.title)
         content.text = snippets.get(p0).title
-        content.setOnClickListener { comm.sendCodeToEditor(snippets.get(p0).title) }
+        content.setOnClickListener { comm.sendCodeToEditor(snippets.get(p0).content) }
 
         return view
     }

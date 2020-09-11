@@ -22,6 +22,7 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         codebox.addTextChangedListener(CustomTextWatcher(codebox))
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -43,7 +44,8 @@ class MainActivity: AppCompatActivity() {
             }
             R.id.snippets -> {
                 startActivity(Intent(MainActivity@this, SnippetsActivity::class.java))
-                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+                finish()
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 return true
             }
             else -> return false
@@ -64,6 +66,12 @@ class MainActivity: AppCompatActivity() {
                 editable?.insert(start, snippet)
                 codebox.setSelection(start)
             }}
+    }
+
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
     }
 
 }

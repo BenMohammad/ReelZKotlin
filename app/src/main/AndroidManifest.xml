@@ -18,12 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.InfoActivity" android:parentActivityName=".activities.SnippetsActivity"/>
+        <activity android:name=".activities.InfoActivity" android:parentActivityName=".activities.SnippetsActivity">
+
+            </activity>
         <activity android:name=".activities.SnippetsActivity"/>
         <activity android:name=".activities.MainActivity"/>
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true"/>
+
     </application>
 
 </manifest>
