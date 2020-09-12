@@ -16,14 +16,16 @@ class SplashActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        supportActionBar!!.title = ""
 
         fadeIn = AnimationUtils.loadAnimation(this, R.anim.faded_start)
         logo.startAnimation(fadeIn)
+        logoImage.startAnimation(fadeIn)
 
         val timerThread: Thread = object : Thread() {
             override fun run() {
                 try {
-                    sleep(1200)
+                    sleep(1500)
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 } finally {

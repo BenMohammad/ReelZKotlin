@@ -23,7 +23,7 @@ class NumberedEditText(context: Context, attrs: AttributeSet
         paint = Paint()
         paint!!.style = Paint.Style.FILL
         paint!!.color = resources.getColor(R.color.white)
-        paint!!.textSize = 24f
+        paint!!.textSize = 16f
         setHorizontallyScrolling(true)
         movementMethod = ScrollingMovementMethod()
     }

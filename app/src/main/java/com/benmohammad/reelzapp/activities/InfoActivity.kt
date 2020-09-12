@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.benmohammad.reelzapp.R
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_info.*
 
 
@@ -17,26 +18,27 @@ class InfoActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
+        supportActionBar!!.title = ""
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         textInfo.setText("<Coded, Hacked, Built {or} Developed in %500 LINES of code" +
-                "of code??,...:: is where!££! Real the Godz of this @world live\n" +
+                "of code??,...:: is where!££! Real the Godz of this @world live\n\n\n" +
                 "Hack, Search%, Post and Share your \\\"mind\\\" in Java, " +
                 "Create++ functions variables and crunch your ~Data~ built\n" +
                 " to the constraints of this* Editor;\n" +
                 "\n" +
+                "\n Code is Life Data Crunching Hobo be ReelZ\n\n\n" +
+                "On your commute, in the cafe, in bed Now you can code anywhere\n\n\n"+
+                "</>Hack in the palm-of-your-hand. \n\n"+
                 "ReelZ The Mobile Java Editor on Android/>")
 
-        adView = findViewById<View>(R.id.advertBanner) as AdView
+        MobileAds.initialize(this) {}
+        var mAdView = findViewById<AdView>(R.id.advertBanner)
         val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
-        inviteBtn.setOnClickListener { inviteAFriend() }
-    }
-
-    private fun inviteAFriend() {
-
+        mAdView.loadAd(adRequest)
 
     }
+
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -45,7 +47,6 @@ class InfoActivity: AppCompatActivity() {
                 onBackPressed()
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }

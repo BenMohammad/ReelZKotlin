@@ -33,18 +33,11 @@
         android:textSize="16dp"
         android:id="@+id/textInfo"
         android:layout_width="match_parent"
+        android:padding="8dp"
         android:textColor="@color/colorGrey"
-        android:layout_height="200dp"/>
-
-    <Button
-        android:id="@+id/inviteBtn"
-        android:textColor="@color/white"
-        android:background="@drawable/main_border"
-        android:layout_margin="10dp"
-        android:layout_below="@id/textInfo"
-        android:text="INVITE A FRIEND"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
 
     </LinearLayout>
 
@@ -55,7 +48,7 @@
         android:padding="8dp"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+        ads:adUnitId="ca-app-pub-1865728617576864/9454509611"/>
 
 
 

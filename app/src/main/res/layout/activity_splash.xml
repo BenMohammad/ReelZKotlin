@@ -10,10 +10,19 @@
         android:fontFamily="@font/codedfont"
         android:gravity="center"
         android:layout_centerInParent="true"
-        android:textColor="@color/colorGrey"
+        android:textColor="#fff"
         android:textSize="38sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ReelZ"/>
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimaryDark"
+        android:src="@mipmap/logo_icon_round" />
 
 </RelativeLayout>

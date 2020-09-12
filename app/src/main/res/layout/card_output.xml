@@ -48,7 +48,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/clearoutputBtn"
+                    android:id="@+id/clearOutputBtn"
                     android:background="@drawable/main_border"
                     android:padding="@dimen/imageviewBtnPad"
                     android:layout_margin="@dimen/imageviewMargin"
@@ -70,7 +70,7 @@
 
 
                     <ImageView
-                        android:id="@+id/shareahatsappBtn"
+                        android:id="@+id/shareWhatsAppBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|bottom"
@@ -83,7 +83,7 @@
                         />
 
                     <ImageView
-                        android:id="@+id/searchoutputGoogleBtn"
+                        android:id="@+id/searchOutputGoogleBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
